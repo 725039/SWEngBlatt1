@@ -25,6 +25,7 @@ private Model theModel;
 		@Override
 		public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 			int a,b,c =3;
+			
 			try {
 				if (theView.scan.hasNext() ==true) {
 					a = theView.getConsoleFirst();
