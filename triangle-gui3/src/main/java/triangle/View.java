@@ -18,6 +18,7 @@ public class View extends Application {
 	TextField aText; 
 	TextField bText;
 	TextField cText;
+	int a,b,c =0;
 	
 	/*
 	TextField aTextField = new TextField("1");
@@ -28,8 +29,8 @@ public class View extends Application {
     Scanner scan = new Scanner(System.in);
 	private Controller controller;
 
-    public View(String[] args) {
-    	launch(args);
+    public View() {
+    	
     }
     
 	@Override
@@ -37,7 +38,7 @@ public class View extends Application {
         // Titel der Anwendung setzen, der als Überschrift des Hauptfensters angezeigt wird
         primaryStage.setTitle("Dreieck");
 
-        aText = new TextField("1");
+      aText = new TextField("1");
         
       bText = new TextField("2");
       cText = new TextField("3");
@@ -66,36 +67,31 @@ public class View extends Application {
 
         root.add(result, 0,3, 2, 1);
         
-        /*ChangeListener<String> listener = (observableValue, oldValue, newValue) -> {
-            try {
-                int a = Integer.parseInt(aTextField.getText());
-                int b = Integer.parseInt(bTextField.getText());
-                int c = Integer.parseInt(cTextField.getText());
-                result.setText(testInt(a,b,c));
-            } catch (NumberFormatException e) {
-                result.setText("ungültig");
-            }
-        };
-        aTextField.textProperty().addListener(listener);
-        bTextField.textProperty().addListener(listener);
-        cTextField.textProperty().addListener(listener);
+        
+          a = Integer.parseInt(aText.getText());
+              b = Integer.parseInt(bText.getText());
+                c = Integer.parseInt(cText.getText());
+               
 
         // Wir rufen den ChangeListener einmal initial auf, damit die Ausgabe am Anfang bereits stimmt
-        listener.changed(aTextField.textProperty(), aTextField.getText(), aTextField.getText());
-*/
+        //listener.changed(aTextField.textProperty(), aTextField.getText(), aTextField.getText());
+
         // Größe des Fensters setzen und Fenster anzeigen
         primaryStage.setScene(new Scene(root, 300, 250));
         primaryStage.show();
     }
 	public int getFirstInt(){
-		return Integer.parseInt(aText.getText());
+		return a;
+		//return Integer.parseInt(aText.getText());
 	}
 	public int getSecondInt() {
-		return  Integer.parseInt(bText.getText());
+		return b;
+		//return  Integer.parseInt(bText.getText());
 	
 	}
 	public int getThirdInt() {
-		return Integer.parseInt(cText.getText());
+		return c;
+		//return Integer.parseInt(cText.getText());
 		
 	}
 	public void setResult(String r) {
